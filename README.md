@@ -1,27 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 So set up github auth using https://richonrails.com/articles/github-authentication-in-ruby-on-rails
 
@@ -31,7 +9,7 @@ rake db:migrate
 
 rails g controller sessions new create destroy
 
-// Now set up challenges and entries
+// Now set up challenges and entries //
 
 rails g controller challenges
 
@@ -56,4 +34,19 @@ rails db:migrate
 rails g migration AddCreatorentryToEntry creatorentry:integer
 
 rails db:migrate
+
+
+/// Git stuff
+git status //shows what needs to be added or "staged" to be commited
+
+git add -A // add all the changes to the "stage" where they can then be committed to the tree
+
+git commit -m "message"//commit your changes to whatever branch you are working on, so now the version of the code that git has is the version you just committed
+
+git remote add origin https://github.com/cshannon3/Collab2TheTop.git  
+// Create a new empty repo on github then run command above to link the remote repo to this git tree
+
+git push -u origin master
+// push the git tree to remote(named origin) from local(named master)
+
 
