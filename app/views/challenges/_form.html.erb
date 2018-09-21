@@ -24,11 +24,14 @@
       <%= f.text_area :description %>
       
     </p>
+    <div style="max-width:150px;">
     <p>
       <%= f.label :difficulty %><br>
-      <%= f.text_area :difficulty %>
-      
+     
+      <%= f.number_field :difficulty, in: 1..5 %>
+     
     </p>
+    </div>
    
     <p>
       <%= f.submit %>

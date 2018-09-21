@@ -49,4 +49,5 @@ git remote add origin https://github.com/cshannon3/Collab2TheTop.git
 git push -u origin master
 // push the git tree to remote(named origin) from local(named master)
 
-
+git checkout -b "working"
+// I like to always work on a branch instead of master so I don't have to stress to much about fucking up something that was working, you create and switch to a breach with the commang above "working" is the new branch name
