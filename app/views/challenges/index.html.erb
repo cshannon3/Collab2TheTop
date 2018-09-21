@@ -1,0 +1,19 @@
+<  <h1 class="my-4 text-center text-lg-left">Thumbnail Gallery</h1>
+
+<%= link_to 'New Challenge', new_challenge_path %>
+
+
+<% @challenges.each_with_index do |challenge, index| %>
+  <div class="row text-center text-lg-left">
+    <div class="col-lg-3 col-md-4 col-xs-6">
+      <div class="thumbnail">
+        <%= image_tag(src="Lawn_Mower.jpg",:size => "260x180", :crop => :fill) %>
+        <div class="caption">
+        <h3><%= challenge.title %></h3>
+        <p><%= challenge.description %></p>
+        <p><%= link_to 'Show', challenge_path(challenge) %>   <%= link_to 'Edit', edit_challenge_path(challenge) %>   <%= link_to 'Destroy',challenge_path(challenge), method: :delete,
+        data: { confirm: 'Are you sure?' } %></p>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+<p>
+<strong>Entry:</strong>
+<%= entry.title %>
+</p>
+
+<p>
+<strong>Repository:</strong>
+<%= entry.url1 %>
+</p>
+<strong>Explanation:</strong>
+<%= entry.url2 %>
+</p>
+<p>
+  <%= link_to 'Destroy Entry', [entry.challenge, entry],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>

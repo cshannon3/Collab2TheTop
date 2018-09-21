@@ -1,0 +1,24 @@
+
+<p>
+    <strong>Title:</strong>
+    <%= @challenge.title %>
+</p>
+
+<p>
+    <strong>User:</strong>
+    <%= @challenge.githubusername if @challenge.githubusername? %>
+</p>
+
+<p>
+    <strong>Text:</strong>
+    <%= @challenge.description %>
+</p>
+
+<h2>Entries</h2>
+<%= render @challenge.entries %>
+
+<h2>Submit an entry:</h2>
+<%= render 'entries/form' %>
+
+<%= link_to 'Edit', edit_challenge_path(@challenge) %> |
+<%= link_to 'Back', challenges_path %>
