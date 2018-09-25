@@ -51,3 +51,10 @@ git push -u origin master
 
 git checkout -b "working"
 // I like to always work on a branch instead of master so I don't have to stress to much about fucking up something that was working, you create and switch to a breach with the commang above "working" is the new branch name
+
+/// Make resources
+
+rails g model Resource url:string description:text resource_type:string
+
+rails g migration AddEntryRefToResources entry:references
+

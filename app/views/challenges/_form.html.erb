@@ -1,40 +1,24 @@
-<%= form_with model: @challenge, local: true do |f| %>
+<%= form_with model: @challenge, builder: LabeledFormBuilder, local: true do |f| %>
  
-    <% if @challenge.errors.any? %>
-        <div id="error_explanation">
-            <h2>
-                <%= pluralize(@challenge.errors.count, "error") %> prohibited
-                this challenge from being saved:
-            </h2>
-            <ul>
-                <% @challenge.errors.full_messages.each do |msg| %>
-                    <li><%= msg %></li>
-                <% end %>
-            </ul>
-        </div>
-    <% end %>
-
-    <p>
-      <%= f.label :title %><br>
-      <%= f.text_field :title %>
-    </p>
-   
-    <p>
-      <%= f.label :description %><br>
-      <%= f.text_area :description %>
+   <%= f.error_messages %>
+  
+    <%= f.text_field :title, label: "Title" %>
+  
+    <%= f.text_area :description %>
       
-    </p>
+
     <div style="max-width:150px;">
     <p>
-      <%= f.label :difficulty %><br>
-     
       <%= f.number_field :difficulty, in: 1..5 %>
-     
-    </p>
+      </p>
     </div>
+    <p>
    
+    <%=  f.collection_check_boxes :tag_list,  Skill.all, :id, :name %>
+    </p>
+
     <p>
       <%= f.submit %>
     </p>
    
-  <% end %>
+<% end %>

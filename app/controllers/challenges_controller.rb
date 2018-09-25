@@ -12,8 +12,10 @@ class ChallengesController < ApplicationController
     end
 
     def create
+       
         @challenge = Challenge.new(challenge_params)
         @challenge.githubusername = current_user.username
+
         if @challenge.save
 
             redirect_to @challenge
@@ -45,7 +47,7 @@ class ChallengesController < ApplicationController
    
     private
     
-    def challenge_params
-        params.require(:challenge).permit(:title, :description, :difficulty)
+    def challenge_params      
+        params.require(:challenge).permit(:title, :description, :difficulty, tag_list:[])
     end
 end
