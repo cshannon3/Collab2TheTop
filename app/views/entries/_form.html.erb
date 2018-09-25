@@ -1,26 +1,15 @@
-<%= form_with(model: [ @challenge, @challenge.entries.build ], local: true) do |f| %>
+<%= simple_form_for  [ @challenge, @challenge.entries.build ] do |f| %>
     
-    <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
- 
-  <p>
-    <%= f.label :url1 %><br>
-    <%= f.url_field :url1 %>
+  
+    <%= f.input :title %>
+
+    <%= f.input :url1 %>
     
-  </p>
 
-  <p>
-    <%= f.label :url2 %><br>
-    <%= f.url_field :url2 %>
+    <%= f.input :url2 %>
+    <%= f.association :resources %>
     
-  </p>
  
+    <%= f.button :submit %>
 
-
- 
-  <p>
-    <%= f.submit %>
-  </p>
   <% end %>

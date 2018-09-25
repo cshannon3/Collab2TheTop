@@ -2,7 +2,7 @@ class LabeledFormBuilder < ActionView::Helpers::FormBuilder
     
     delegate :content_tag, :tag, to: :@template
     
-    %w[text_field text_area number_field collection_selection].each do |method_name|
+    %w[text_field text_area number_field collection_selection url_field].each do |method_name|
         define_method(method_name) do |name, *args|
             content_tag :div, class: "field" do
                 field_label(name, *args) + tag(:br) + super(name, *args)
@@ -21,7 +21,6 @@ class LabeledFormBuilder < ActionView::Helpers::FormBuilder
         content_tag :div, class: "field" do
             @template.hidden_field_tag("#{object_name}[#{attribute}][]")
             + records.map do |record|
-    
                 element_id = "#{object_name}_#{attribute}_#{record.send(record_id)}"
                 checkbox = @template.check_box_tag("#{object_name}[#{attribute}][]", record.send(record_name))
                     checkbox + " " + @template.label_tag(record.name)

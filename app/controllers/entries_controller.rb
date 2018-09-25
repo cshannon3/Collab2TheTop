@@ -15,7 +15,6 @@ class EntriesController < ApplicationController
         @entry.destroy
         redirect_to challenge_path(@challenge)
     end
-     
     private
     
     def entry_params
